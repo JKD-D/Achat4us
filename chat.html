@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SecureChat - Chat</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Firebase CDN -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <!-- Firebase Initialization -->
+  <script src="js/firebase-config.js"></script>
+</head>
+<body>
+  <div class="chat-container">
+    <!-- Sidebar with chat selection -->
+    <aside class="sidebar">
+      <h2>Chats</h2>
+      <ul id="chat-list">
+        <!-- For now, we show a single default chat partner -->
+        <li class="active" data-partner="user2">User2</li>
+      </ul>
+    </aside>
+    
+    <!-- Main Chat Area -->
+    <main class="chat-main">
+      <header class="chat-header">
+        <div class="header-info">
+          <h2 id="chat-partner-name">User2</h2>
+          <span id="status-indicator" class="offline">Offline</span>
+        </div>
+        <button id="logout-button" title="Logout">Logout</button>
+      </header>
+      
+      <div class="chat-messages" id="chat-messages">
+        <!-- Messages will load here dynamically -->
+      </div>
+      
+      <footer class="chat-input">
+        <input type="text" id="message-input" placeholder="Type your message..." autocomplete="off">
+        <button id="send-button">Send</button>
+      </footer>
+    </main>
+  </div>
+  <script src="js/chat.js"></script>
+</body>
+</html>
